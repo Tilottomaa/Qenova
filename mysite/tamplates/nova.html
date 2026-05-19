@@ -1,49 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>QeNova</title>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <h1>QeNova</h1>
 
     <p>Because Every Minute Counts.</p>
 
-    <p>Smart Queue Management System</p>
-
+    <p>Smart Queue Management System. Reduce your waiting time</p>
 
     <h2>For Customers:</h2>
 
-    <a href="{% url 'login' %}">
-        Login
-    </a>
+    <a href="{% url 'login' %}"> Login </a>
 
-    <a href="{% url 'user_upload' %}">
-        Register
-    </a>
+    <a href="{% url 'user_upload' %}"> Register </a>
 
-
-    <br><br><br>
-
+    <br /><br /><br />
 
     <h2>For Businesses/Organizations:</h2>
 
-    <a href="{% url 'organization_login' %}">
-        Login as Organization
-    </a>
+    <a href="{% url 'organization_login' %}"> Login as Organization </a>
 
-    <a href="{% url 'organization_register' %}">
-        Register Organization
-    </a>
-
-</body>
-
+    <a href="{% url 'organization_register' %}"> Register Organization </a>
+  </body>
 </html>
