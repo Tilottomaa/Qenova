@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload User</title>
+</head>
+<body>
+
+    <h1>Upload User</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Save User
+        </button>
+
+    </form>
+
+</body>
+</html>

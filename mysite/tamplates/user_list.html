@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+
+    <h1>User List</h1>
+
+    <a href="{% url 'user_upload' %}">
+        Upload New User
+    </a>
+
+    <hr>
+{% for user in users %}
+
+<h3>{{ user.name }}</h3>
+
+<p>Email: {{ user.email }}</p>
+
+<p>Status: {{ user.status }}</p>
+
+<p>Last Login: {{ user.last_login }}</p>
+
+{% if user.profile_pic %}
+
+<img src="{{ user.profile_pic.url }}" width="200">
+
+{% endif %}
+
+<br><br>
+
+<a href="{% url 'update_user' user.id %}">
+    Edit
+</a> <br><br>
+
+<a href="{% url 'delete_user' user.id %}">
+    Delete
+</a>
+
+<hr>
+
+{% endfor %}
+        <hr>
+
+
+
+</body>
+</html>
