@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+
+<div class="card shadow-lg p-5">
+
+    <h1 class="text-center text-primary mb-4">
+        Organization Registration
+    </h1>
+
+    <form method="POST"
+          enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit"
+                class="btn btn-primary">
+
+            Register
+
+        </button>
+
+    </form>
+
+</div>
+
+
+</body>
+</html>

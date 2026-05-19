@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+<div class="card shadow-lg p-5">
+
+    <h1 class="text-primary">
+        Welcome Organization
+    </h1>
+
+    <hr>
+
+    <h3>
+        {{ organization.organization_name }}
+    </h3>
+
+    <p>
+        Email:
+        {{ organization.email }}
+    </p>
+
+    <p>
+        Working Hours:
+        {{ organization.working_hours }}
+    </p>
+
+    {% if organization.logo %}
+
+        <img src="{{ organization.logo.url }}"
+             width="200">
+
+    {% endif %}
+
+</div>
+<br><br>
+
+<a href="{% url 'organization_logout' %}">
+    Logout
+</a>
+
+
+</body>
+</html>
