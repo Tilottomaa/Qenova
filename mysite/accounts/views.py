@@ -128,8 +128,21 @@ def profile(request):
 
 def dashboard(request):
 
-    return render(request, 'dashboard.html')
+    user_id = request.session.get('user_id')
 
+    if not user_id:
+
+        return redirect('login')
+
+    organizations = OrganizationUser.objects.all()
+
+    return render(
+        request,
+        'dashboard.html',
+        {
+            'organizations': organizations
+        }
+    )
 
 
 def organization_register(request):
