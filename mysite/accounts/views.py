@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from .models import User
 from .forms import UserForm,LoginForm
 from django.utils import timezone
