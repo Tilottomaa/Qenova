@@ -31,40 +31,9 @@
     Welcome to Dashboard
 </h2>
 
-
-<h2>
-    Available Organizations
-</h2>
-
-<hr>
-
-{% for organization in organizations %}
-
-    <h3>
-        {{ organization.organization_name }}
-    </h3>
-
-    <p>
-        Email:
-        {{ organization.email }}
-    </p>
-
-    <p>
-        Working Hours:
-        {{ organization.working_hours }}
-    </p>
-
-    {% if organization.logo %}
-
-        <img src="{{ organization.logo.url }}"
-             width="200">
-
-    {% endif %}
-
-    <br><br>
-
-{% endfor %}
-
+<a href="{% url 'all_organizations' %}">
+    View Organizations
+</a>
 
 <hr>
 

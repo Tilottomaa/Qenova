@@ -146,22 +146,43 @@ def dashboard(request):
 
 
 def organization_register(request):
+
     if request.method == 'POST':
 
-        form = OrganizationForm(request.POST,request.FILES)
+        form = OrganizationForm(
+            request.POST,
+            request.FILES
+        )
 
         if form.is_valid():
+
+            email = form.cleaned_data['email']
+
+            existing = OrganizationUser.objects.filter(
+                email=email
+            ).exists()
+
+            if existing:
+
+                return HttpResponse(
+                    "Organization already exists"
+                )
+
             form.save()
-            return redirect('organization_login')
+
+            return redirect(
+                'organization_login'
+            )
 
     else:
+
         form = OrganizationForm()
 
-
-    return render(request,'organization_register.html',
-        {'form': form})
-
-
+    return render(
+        request,
+        'organization_register.html',
+        {'form': form}
+    )
 
 def organization_login(request):
 
