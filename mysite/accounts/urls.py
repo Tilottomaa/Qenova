@@ -29,5 +29,10 @@ path(
     views.organization_logout,
     name='organization_logout'
 ),
+    path(
+    'organizations/',
+    views.all_organizations,
+    name='all_organizations'
+),
 
 ]

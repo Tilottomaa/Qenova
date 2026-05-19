@@ -208,3 +208,12 @@ def organization_logout(request):
     request.session.flush()
 
     return redirect('organization_login')
+def all_organizations(request):
+
+    organizations = OrganizationUser.objects.all()
+
+    return render(
+        request,
+        'all_organizations.html',
+        {'organizations': organizations}
+    )

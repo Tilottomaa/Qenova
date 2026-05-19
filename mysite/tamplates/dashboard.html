@@ -47,32 +47,42 @@
 
         <div class="col-md-6">
 
-            <div class="card shadow-lg p-4">
+    <div class="card shadow-lg p-4">
 
-                <h3 class="text-primary">
-                    Organization Information
-                </h3>
+        <h3 class="text-primary">
+            Organization Information
+        </h3>
 
-                <hr>
+        <hr>
 
-                <p>
-                    <strong>Name:</strong>
-                    Qenova Health Center
-                </p>
+        <p>
+            <strong>Name:</strong>
 
-                <p>
-                    <strong>Working Hours:</strong>
-                    9 AM - 5 PM
-                </p>
+            {{ organization.organization_name }}
+        </p>
 
-                <p>
-                    <strong>Status:</strong>
-                    Open
-                </p>
+        <p>
+            <strong>Working Hours:</strong>
 
-            </div>
+            {{ organization.working_hours }}
+        </p>
 
-        </div>
+        <p>
+            <strong>Email:</strong>
+
+            {{ organization.email }}
+        </p>
+
+        {% if organization.logo %}
+
+            <img src="{{ organization.logo.url }}"
+                 width="200">
+
+        {% endif %}
+
+    </div>
+
+</div>
 
 
 
